@@ -137,5 +137,7 @@ journalctl -ar
 #### Central instance
 
 ```
-python3 example.py
+python3 example.py --query python --instance_name Auxiliary
 ```
+
+페이지 수집이 종료되면 자동으로 Auxiliary 인스턴스를 시작시키며 바로 수집을 시작합니다.

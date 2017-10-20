@@ -15,3 +15,24 @@ def timeout_handle(func):
         except TimeoutException:
             return 'TIMEOUT ERROR'
     return wrapper
+
+
+def context_manager(func):
+    """
+    Example class 내부의 transaction 메서드에 사용
+    가장 상위 데코레이터로 사용
+    """
+    @wraps(func)
+    def wrapper(self, *args, **kwargs):
+        try:
+            return func(self, *args, **kwargs)
+        finally:
+            # 웹 드라이버 파괴
+            self.crawl.destroy_webdriver()
+
+            # 에러 컬럼 업데이트
+            self.update_error()
+
+            # Database 종료
+            self.mysql.connector.close()
+    return wrapper

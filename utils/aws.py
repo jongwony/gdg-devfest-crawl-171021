@@ -39,6 +39,7 @@ class Resource:
         Required EC2 Access in IAM
         For ssh access, security group ids(list), keypair(keyname) required
         """
+        # FIXME: 프로젝트 Fork 시 쉘 스크립트 내부를 변경해야 합니다.
         with open(get_path('ec2_init_script.sh')) as fd:
             user_data = fd.read()
 

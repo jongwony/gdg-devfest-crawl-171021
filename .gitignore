@@ -9,3 +9,6 @@ __pycache__/
 
 # virtualenv
 .py3/
+
+# config
+_config.py

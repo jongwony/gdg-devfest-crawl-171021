@@ -6,6 +6,8 @@ def aws_init(name='Auxiliary', count=1, security_group_ids=None, key_pair=None):
     aws = Resource()
     if not len(aws.get_instances(name)):
         aws.create_instance(name, count, security_group_ids, key_pair)
+    else:
+        print('Instance Already Exists!')
 
 
 if __name__ == '__main__':

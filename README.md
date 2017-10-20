@@ -91,6 +91,12 @@ Telegram에서 `@botfather`를 통해 봇을 생성합니다.
 curl https://api.telegram.org/bot<token>/<API>[&<Data>]
 ```
 
+## Configuration
+
+`_config.py` 파일을 생성하여 `_config_template.py` 양식으로 만들어줍니다.
+
+- RDS Infomation
+- Telegram TOKEN
 
 ## Setup
 
